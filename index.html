@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CityBuzz — Discover, book, and enjoy local city events including stand-up comedy, live concerts, and book readings." />
+  <title>CityBuzz — Your City's Event Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- SKIP NAVIGATION -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- MOBILE NAV DRAWER -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Close navigation">✕</button>
+    <a href="#about"         onclick="closeMobile()">About</a>
+    <a href="#schedule"      onclick="closeMobile()">Events</a>
+    <a href="#highlights"    onclick="closeMobile()">By the Numbers</a>
+    <a href="#testimonials"  onclick="closeMobile()">Reviews</a>
+    <a href="#links"         onclick="closeMobile()">Resources</a>
+    <a href="#rsvp"          onclick="closeMobile()">RSVP</a>
+    <div class="mobile-nav-actions">
+      <a href="#schedule" class="btn btn-outline" onclick="closeMobile()">Browse Events</a>
+      <a href="#rsvp"     class="btn btn-primary" onclick="closeMobile()">Book Tickets</a>
+    </div>
+  </nav>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Primary navigation">
+        <a class="logo-link" href="#top" aria-label="CityBuzz home">
+          <div class="logo-mark" aria-hidden="true">CB</div>
+          <div class="logo-text-wrap">
+            <span class="logo-name">CityBuzz</span>
+            <span class="logo-tagline">Your city's event hub</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#schedule">Events</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#links">Resources</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="toggle-btn" id="themeBtn" aria-pressed="false" aria-label="Switch to light mode">
+            <span aria-hidden="true">☀️</span> Light
+          </button>
+          <button class="toggle-btn" id="partyBtn" aria-pressed="false" aria-label="Toggle party mode">
+            <span aria-hidden="true">🎉</span> Party
+          </button>
+          <a href="#schedule" class="btn btn-ghost btn-sm">Browse</a>
+          <a href="#rsvp"     class="btn btn-primary btn-sm">Book Tickets</a>
+        </div>
+
+        <button class="nav-menu-btn" id="menuBtn" aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+          <span class="hamburger" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-badge" aria-label="Currently live">
+              <span class="hero-badge-dot" aria-hidden="true"></span>
+              Events happening this weekend
+            </div>
+            <h1 id="hero-heading">Discover your city's <em>best nights</em></h1>
+            <p class="hero-desc">CityBuzz connects you with stand-up comedy, live concerts, book readings, and more. Reserve your seat in seconds.</p>
+            <div class="hero-cta">
+              <a href="#schedule" class="btn btn-primary">Browse Events</a>
+              <a href="#rsvp"     class="btn btn-outline">Book Tickets</a>
+            </div>
+            <div class="hero-stats" aria-label="Platform statistics">
+              <div class="stat-item">
+                <span class="stat-val" aria-label="50 plus">50+</span>
+                <span class="stat-label">Events monthly</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val" aria-label="12 thousand">12K</span>
+                <span class="stat-label">Happy attendees</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">3</span>
+                <span class="stat-label">Weekly series</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-card-icon ic-amber">🎤</div>
+              <span class="hero-card-tag tag-amber">Comedy</span>
+              <div class="hero-card-title">Stand-Up Fridays</div>
+              <div class="hero-card-meta">Every Fri · 8:00 PM</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-icon ic-teal">🎸</div>
+              <span class="hero-card-tag tag-teal">Music</span>
+              <div class="hero-card-title">Indie Concert Sat.</div>
+              <div class="hero-card-meta">Every Sat · 7:00 PM</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-icon ic-rose">📚</div>
+              <span class="hero-card-tag tag-rose">Literary</span>
+              <div class="hero-card-title">Book Reading Sun.</div>
+              <div class="hero-card-meta">Every Sun · 3:00 PM</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-icon ic-violet">✨</div>
+              <span class="hero-card-tag tag-violet">New</span>
+              <div class="hero-card-title">More coming soon</div>
+              <div class="hero-card-meta">Stay tuned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── ABOUT ── -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <span class="eyebrow">About CityBuzz</span>
+        <h2 id="about-heading">Everything you need, in one place</h2>
+        <p style="max-width:580px;margin-top:.5rem;">We connect locals with the best live experiences their city has to offer — from laugh-out-loud comedy to soul-moving concerts and thoughtful literary evenings.</p>
+        <div class="features-grid" role="list">
+          <article class="feature-card reveal" role="listitem">
+            <div class="feature-icon ic-amber" aria-hidden="true">📍</div>
+            <h3>Real-Time Listings</h3>
+            <p>Events appear the moment they're announced. Never miss a show happening near you — see new listings as they go live.</p>
+          </article>
+          <article class="feature-card reveal" role="listitem" style="transition-delay:.08s;">
+            <div class="feature-icon ic-teal" aria-hidden="true">⚡</div>
+            <h3>Diverse Experiences</h3>
+            <p>Stand-up comedy, live concerts, open mics, book readings — a curated mix of events so there's always something worth showing up for.</p>
+          </article>
+          <article class="feature-card reveal" role="listitem" style="transition-delay:.16s;">
+            <div class="feature-icon ic-rose" aria-hidden="true">🎟️</div>
+            <h3>Instant Booking</h3>
+            <p>Reserve seats in seconds with no friction. Your confirmation arrives immediately — no account required to get started.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── EVENT SCHEDULE ── -->
+    <section id="schedule" aria-labelledby="schedule-heading">
+      <div class="container">
+        <div class="schedule-header">
+          <div>
+            <span class="eyebrow">Event Schedule</span>
+            <h2 id="schedule-heading">What's on this week</h2>
+          </div>
+          <div class="filter-group" role="group" aria-label="Filter events by category">
+            <button class="filter-pill" aria-pressed="true"  data-filter="all"     >All</button>
+            <button class="filter-pill" aria-pressed="false" data-filter="comedy"  >🎤 Comedy</button>
+            <button class="filter-pill" aria-pressed="false" data-filter="music"   >🎸 Music</button>
+            <button class="filter-pill" aria-pressed="false" data-filter="literary">📚 Literary</button>
+          </div>
+        </div>
+
+        <div class="events-stack" id="eventsStack" role="list" aria-live="polite" aria-label="Filtered events">
+
+          <!-- COMEDY -->
+          <article class="event-card reveal" data-cat="comedy" role="listitem" aria-labelledby="ev1-title">
+            <div class="event-thumb event-thumb-comedy" aria-hidden="true">
+              <span class="event-thumb-label"><span class="event-badge badge-amber">Every Friday</span></span>
+              🎤
+            </div>
+            <div class="event-body">
+              <div>
+                <h3 id="ev1-title">Stand-Up Fridays</h3>
+                <ul class="event-meta-list" aria-label="Event details">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Every Friday
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    8:00 PM
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Downtown Comedy Club
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    $15 per seat
+                  </li>
+                </ul>
+                <p>Laugh out loud with a rotating lineup of local and touring comedians every Friday night. Themed nights, crowd interaction, and a warm venue that's perfect for groups. Come for the jokes, stay for the vibe.</p>
+              </div>
+              <div class="event-actions">
+                <button class="btn btn-primary btn-sm" onclick="openModal('Stand-Up Fridays','Every Friday · 8:00 PM · Downtown Comedy Club',15)">
+                  Book Tickets
+                </button>
+                <button class="btn btn-ghost btn-sm" onclick="addToCalendar('Stand-Up Fridays','Every Friday 8PM','Downtown Comedy Club')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Add to Calendar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- MUSIC -->
+          <article class="event-card reveal" data-cat="music" role="listitem" aria-labelledby="ev2-title" style="transition-delay:.08s;">
+            <div class="event-thumb event-thumb-music" aria-hidden="true">
+              <span class="event-thumb-label"><span class="event-badge badge-teal">Every Saturday</span></span>
+              🎸
+            </div>
+            <div class="event-body">
+              <div>
+                <h3 id="ev2-title">Indie Concert Saturday</h3>
+                <ul class="event-meta-list" aria-label="Event details">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Every Saturday
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    7:00 PM
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Riverside Amphitheater
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    $20 per seat
+                  </li>
+                </ul>
+                <p>Dive into the indie scene with local bands every Saturday evening. Open-air seating, food trucks, light shows, and sounds that move your soul. Bring your crew and let the rhythm take over.</p>
+              </div>
+              <div class="event-actions">
+                <button class="btn btn-primary btn-sm" onclick="openModal('Indie Concert Saturday','Every Saturday · 7:00 PM · Riverside Amphitheater',20)">
+                  Book Tickets
+                </button>
+                <button class="btn btn-ghost btn-sm" onclick="addToCalendar('Indie Concert Saturday','Every Saturday 7PM','Riverside Amphitheater')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Add to Calendar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- LITERARY -->
+          <article class="event-card reveal" data-cat="literary" role="listitem" aria-labelledby="ev3-title" style="transition-delay:.16s;">
+            <div class="event-thumb event-thumb-literary" aria-hidden="true">
+              <span class="event-thumb-label"><span class="event-badge badge-yellow">Every Sunday</span></span>
+              📚
+            </div>
+            <div class="event-body">
+              <div>
+                <h3 id="ev3-title">Book Reading Sundays</h3>
+                <ul class="event-meta-list" aria-label="Event details">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Every Sunday
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    3:00 PM
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    City Library Hall
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+                    Free entry
+                  </li>
+                </ul>
+                <p>Author meetups, literary discussions, signings, and tea. Whether you're a fiction devotee or non-fiction nerd, Sundays are your reset. Thoughtful conversations in a cozy, relaxed setting.</p>
+              </div>
+              <div class="event-actions">
+                <button class="btn btn-primary btn-sm" onclick="openModal('Book Reading Sundays','Every Sunday · 3:00 PM · City Library Hall · Free',0)">
+                  Reserve Seat — Free
+                </button>
+                <button class="btn btn-ghost btn-sm" onclick="addToCalendar('Book Reading Sundays','Every Sunday 3PM','City Library Hall')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Add to Calendar
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="no-results" id="noResults" hidden aria-live="polite">
+          No events in this category right now — check back soon!
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── HIGHLIGHTS ── -->
+    <section id="highlights" class="stats-section" aria-labelledby="highlights-heading">
+      <div class="container" style="padding-block:0;">
+        <h2 id="highlights-heading" class="sr-only">Platform highlights</h2>
+        <div class="stats-grid" role="list">
+          <div class="stat-card reveal" role="listitem">
+            <div class="stat-num" data-target="50" data-suffix="+" aria-label="50 plus events monthly">0</div>
+            <div class="stat-label">Events every month</div>
+          </div>
+          <div class="stat-card reveal" role="listitem" style="transition-delay:.07s;">
+            <div class="stat-num" data-target="12" data-suffix="K" aria-label="12 thousand attendees">0</div>
+            <div class="stat-label">Happy attendees</div>
+          </div>
+          <div class="stat-card reveal" role="listitem" style="transition-delay:.14s;">
+            <div class="stat-num" data-target="3" data-suffix="" aria-label="3 recurring weekly series">0</div>
+            <div class="stat-label">Recurring weekly series</div>
+          </div>
+          <div class="stat-card reveal" role="listitem" style="transition-delay:.21s;">
+            <div class="stat-num" data-target="100" data-suffix="%" aria-label="100 percent satisfaction rate">0</div>
+            <div class="stat-label">Satisfaction rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── PERFORMER SPOTLIGHT ── -->
+    <section class="performer-section" aria-labelledby="performer-heading">
+      <div class="container" style="padding-block:clamp(32px,4vw,48px);">
+        <span class="eyebrow">Performer spotlight</span>
+        <div class="performer-inner reveal" style="margin-top:1.2rem;">
+          <div class="performer-avatar" aria-hidden="true">🎭</div>
+          <div class="performer-info">
+            <h3 id="performer-heading">Zakir Khan — This Friday</h3>
+            <p>A rising star in stand-up comedy, Zakir is known for sharp wit, hilarious impersonations, and stories that make the whole room feel seen. Don't miss him live at Downtown Comedy Club.</p>
+            <ul class="performer-meta" aria-label="Performance details">
+              <li class="performer-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                This Friday
+              </li>
+              <li class="performer-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                8:00 PM
+              </li>
+              <li class="performer-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Downtown Comedy Club
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="openModal('Stand-Up Fridays','This Friday · 8:00 PM · Zakir Khan',15)">
+              Book for This Friday
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── TESTIMONIALS ── -->
+    <section id="testimonials" aria-labelledby="testi-heading">
+      <div class="container">
+        <div class="testi-header">
+          <div>
+            <span class="eyebrow">What people are saying</span>
+            <h2 id="testi-heading">The buzz</h2>
+          </div>
+        </div>
+        <div class="testi-grid" id="testiGrid" aria-live="polite" aria-label="Testimonials">
+          <article class="testi-card reveal">
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testi-text">"Best event I've attended in years. The vibe was incredible from the first minute."</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">P</div>
+              <div>
+                <div class="testi-name">Priya M.</div>
+                <div class="testi-event">Stand-Up Fridays</div>
+              </div>
+            </footer>
+          </article>
+          <article class="testi-card reveal" style="transition-delay:.08s;">
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testi-text">"Incredible musicians and a seamless booking experience. I'll be back every Saturday."</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">C</div>
+              <div>
+                <div class="testi-name">Chris T.</div>
+                <div class="testi-event">Indie Concert Saturday</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── SHARE EXPERIENCE ── -->
+    <section class="review-section" aria-labelledby="review-heading">
+      <div class="container" style="padding-block:clamp(48px,6vw,72px);">
+        <div class="review-inner">
+          <div>
+            <span class="eyebrow">Share your experience</span>
+            <h2 id="review-heading">Leave a review</h2>
+            <p style="margin-top:.6rem;max-width:360px;">Been to one of our events? Tell others what you thought. Your review goes live on the page instantly.</p>
+          </div>
+          <form id="reviewForm" novalidate aria-label="Submit a review" onsubmit="return false;">
+            <div class="form-stack">
+              <div class="form-group">
+                <label class="form-label" for="revName">Your name <abbr title="required">*</abbr></label>
+                <input class="form-control" id="revName" type="text" autocomplete="name" aria-required="true" aria-describedby="revNameErr" placeholder="e.g. Sarah K." />
+                <span class="field-error" id="revNameErr" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="revEvent">Event attended <abbr title="required">*</abbr></label>
+                <select class="form-control" id="revEvent" aria-required="true" aria-describedby="revEventErr">
+                  <option value="">— Select an event —</option>
+                  <option>Stand-Up Fridays</option>
+                  <option>Indie Concert Saturday</option>
+                  <option>Book Reading Sundays</option>
+                </select>
+                <span class="field-error" id="revEventErr" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="revText">Your review <abbr title="required">*</abbr></label>
+                <textarea class="form-control" id="revText" aria-required="true" aria-describedby="revTextErr revTextHint" placeholder="Tell us what you loved…"></textarea>
+                <span class="form-hint" id="revTextHint">Minimum 10 characters</span>
+                <span class="field-error" id="revTextErr" role="alert"></span>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary" onclick="submitReview()">Submit Review</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── LINKS ── -->
+    <section id="links" aria-labelledby="links-heading">
+      <div class="container">
+        <span class="eyebrow">Useful resources</span>
+        <h2 id="links-heading">More ways to explore</h2>
+        <div class="links-grid">
+          <a href="https://in.bookmyshow.com" target="_blank" rel="noopener noreferrer" class="resource-card reveal" aria-label="BookMyShow — opens in new tab">
+            <div class="resource-icon" aria-hidden="true">🎬</div>
+            <div>
+              <h3>BookMyShow</h3>
+              <p>Book tickets for movies, concerts, sports, and theatre across the country.</p>
+            </div>
+            <span class="resource-ext" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://allevents.in" target="_blank" rel="noopener noreferrer" class="resource-card reveal" style="transition-delay:.08s;" aria-label="AllEvents.in — opens in new tab">
+            <div class="resource-icon" aria-hidden="true">📅</div>
+            <div>
+              <h3>AllEvents.in</h3>
+              <p>Discover open mics, festivals, workshops, and shows near you.</p>
+            </div>
+            <span class="resource-ext" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ── RSVP ── -->
+    <section id="rsvp" class="rsvp-section" aria-labelledby="rsvp-heading">
+      <div class="container">
+        <div class="rsvp-inner">
+          <div>
+            <span class="eyebrow">RSVP</span>
+            <h2 id="rsvp-heading">Be part of the buzz</h2>
+            <p style="margin-top:.5rem;">Secure your spot and join the community. <strong><span id="rsvpCount" class="rsvp-count">3</span> people</strong> have already RSVP'd this week.</p>
+            <ul class="attendee-list" id="attendeeList" aria-label="Recent RSVPs" aria-live="polite">
+              <li class="attendee-item"><span class="attendee-dot" aria-hidden="true"></span>DJ from Texas — Stand-Up Fridays</li>
+              <li class="attendee-item"><span class="attendee-dot" aria-hidden="true"></span>Amy from Chicago — Book Reading Sundays</li>
+              <li class="attendee-item"><span class="attendee-dot" aria-hidden="true"></span>Teresa from Montessori — Indie Concert Saturday</li>
+            </ul>
+          </div>
+          <form id="rsvpForm" novalidate aria-label="RSVP form" onsubmit="return false;">
+            <div class="form-stack">
+              <div class="form-group">
+                <label class="form-label" for="rName">Full name <abbr title="required">*</abbr></label>
+                <input class="form-control" id="rName" type="text" autocomplete="name" aria-required="true" aria-describedby="rNameErr" placeholder="Your name" />
+                <span class="field-error" id="rNameErr" role="alert"></span>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="rCity">City &amp; State <abbr title="required">*</abbr></label>
+                  <input class="form-control" id="rCity" type="text" autocomplete="address-level2" aria-required="true" aria-describedby="rCityErr" placeholder="e.g. Austin, TX" />
+                  <span class="field-error" id="rCityErr" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="rEmail">Email <abbr title="required">*</abbr></label>
+                  <input class="form-control" id="rEmail" type="email" autocomplete="email" aria-required="true" aria-describedby="rEmailErr" placeholder="you@email.com" />
+                  <span class="field-error" id="rEmailErr" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="rEvent">Choose an event <abbr title="required">*</abbr></label>
+                <select class="form-control" id="rEvent" aria-required="true" aria-describedby="rEventErr">
+                  <option value="">— Select an event —</option>
+                  <option>Stand-Up Fridays</option>
+                  <option>Indie Concert Saturday</option>
+                  <option>Book Reading Sundays</option>
+                </select>
+                <span class="field-error" id="rEventErr" role="alert"></span>
+              </div>
+              <p class="form-hint">We'll email your confirmation. No spam, ever.</p>
+              <div>
+                <button type="submit" class="btn btn-primary" onclick="submitRSVP()">Submit RSVP</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONTACT BAR -->
+  <aside class="contact-bar" aria-label="Contact information">
+    <span style="font-size:.85rem;color:var(--c-text-muted);">Questions? Get in touch:</span>
+    <a href="mailto:hello@citybuzz.com">hello@citybuzz.com</a>
+    <span class="contact-sep" aria-hidden="true">·</span>
+    <a href="tel:+15550001234">+1 (555) 000-1234</a>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--c-surface);border-top:1px solid var(--c-border);" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2025 CityBuzz. All rights reserved.</span>
+        <ul class="footer-links" role="list">
+          <li><a href="https://in.bookmyshow.com" target="_blank" rel="noopener">BookMyShow</a></li>
+          <li><a href="https://allevents.in"       target="_blank" rel="noopener">AllEvents</a></li>
+          <li><a href="mailto:hello@citybuzz.com">Contact</a></li>
+          <li><a href="#top">Back to top ↑</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-overlay" id="modalOverlay" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal" id="modalBox">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title" style="font-size:1.4rem;"></h2>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+        </div>
+        <button class="btn-icon" id="modalCloseBtn" aria-label="Close booking dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="form-stack">
+        <div class="form-group">
+          <label class="form-label" for="mName">Full name <abbr title="required">*</abbr></label>
+          <input class="form-control" id="mName" type="text" autocomplete="name" aria-required="true" aria-describedby="mNameErr" placeholder="Your full name" />
+          <span class="field-error" id="mNameErr" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="mEmail">Email address <abbr title="required">*</abbr></label>
+          <input class="form-control" id="mEmail" type="email" autocomplete="email" aria-required="true" aria-describedby="mEmailErr" placeholder="you@email.com" />
+          <span class="field-error" id="mEmailErr" role="alert"></span>
+        </div>
+        <div class="seat-picker">
+          <span class="seat-picker-label">Number of seats</span>
+          <div class="seat-controls" role="group" aria-label="Seat quantity">
+            <button class="seat-btn" id="seatMinus" onclick="chgSeats(-1)" aria-label="Decrease seats" disabled>−</button>
+            <span class="seat-num" id="seatNum" aria-live="polite" aria-atomic="true">1</span>
+            <button class="seat-btn" id="seatPlus"  onclick="chgSeats(1)"  aria-label="Increase seats">+</button>
+          </div>
+        </div>
+        <div class="price-summary" aria-live="polite" aria-atomic="true">
+          <div>
+            <span class="price-label" id="priceLabel">1 seat</span>
+          </div>
+          <span class="price-total" id="priceTotal">$15</span>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:.8rem;" onclick="confirmBooking()">
+          Confirm Booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST REGION -->
+  <div class="toast-region" id="toastRegion" aria-live="assertive" aria-atomic="false" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
