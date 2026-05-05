@@ -555,9 +555,9 @@
     .events-stack { display: flex; flex-direction: column; gap: 20px; }
 
     .event-card {
-      display: flex;
-      align-items: stretch;
-      min-height: 260px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      height: 240px;
       background: var(--c-surface);
       border: 1px solid var(--c-border);
       border-radius: var(--radius-lg);
@@ -569,15 +569,7 @@
 
     .event-thumb {
       position: relative;
-      width: 280px;
-      min-width: 280px;
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
       overflow: hidden;
-      flex-shrink: 0;
     }
     
     .event-thumb img {
@@ -627,11 +619,20 @@
       border: 1px solid rgba(255,255,255,.3);
     }
     .event-body {
-      padding: clamp(20px, 3vw, 28px);
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
+      gap: 8px;
+      overflow: hidden;
+    }
+    
+    .event-body p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: .85rem;
     }
     .event-body h3 { color: var(--c-text); margin-bottom: .4rem; }
     .event-body p  { font-size: .88rem; line-height: 1.7; }
